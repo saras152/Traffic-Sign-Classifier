@@ -1,12 +1,10 @@
-#**Traffic Sign Recognition** 
+# **Traffic Sign Recognition** 
 
-##Writeup Template
-
-###You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
+This project is created to recognize traffic signs through machine learning principles, with focus on deep learning and Convolutional neural networks. I used the database provided from [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset) for training, validating and testing the model. 
 
 ---
 
-**Build a Traffic Sign Recognition Project**
+## Building a Traffic Sign Recognition system ##
 
 The goals / steps of this project are the following:
 * Load the data set (see below for links to the project data set)
@@ -19,17 +17,16 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/visualization.jpg "Visualization"
-[image2]: ./examples/grayscale.jpg "Grayscaling"
-[image3]: ./examples/random_noise.jpg "Random Noise"
-[image4]: ./examples/placeholder.png "Traffic Sign 1"
-[image5]: ./examples/placeholder.png "Traffic Sign 2"
-[image6]: ./examples/placeholder.png "Traffic Sign 3"
-[image7]: ./examples/placeholder.png "Traffic Sign 4"
-[image8]: ./examples/placeholder.png "Traffic Sign 5"
+[image1]: ./new-images/11 right of way.png  "Sign1"
+[image2]: ./new-images/12 priority road.png  "Sign2"
+[image3]: ./new-images/13 yield.png  "Sign3"
+[image4]: ./new-images/17 no entry.png  "Sign4"
+[image5]: ./new-images/26 signal lights.png  "Sign5"
+[image6]: ./new-images/36 straight or right.png  "Sign6"
+[image7]: ./new-images/38 keep right.png  "Sign7"
 
 ## Rubric Points
-###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
+Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
 
 ---
 ###Writeup / README

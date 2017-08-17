@@ -43,22 +43,61 @@ I used the numpy library to calculate summary statistics of the traffic
 signs data set:
 
 * The size of training set is 34799
-* The size of the validation set is 
+* The size of the validation set is 4410
 * The size of test set is 12630
 * The shape of a traffic sign image is 32 x 32 x 3 
 * The number of unique classes/labels in the data set is 43
 
 ####2. Include an exploratory visualization of the dataset.
 
-When the histogram of number of occurrances of each label is plotted, it may be observed that some of the labels are more (some are about 2000 while some are about 200) than the others. This could result in more training for few labels and less training for few labels, and may result in less accurate detection of some signs than the other. 
+When the histogram of number of occurrances of each label is plotted, it may be observed that some of the labels are more (some are about 2000 while some are about 200) than the others. This could result in more training for few labels and less training for few labels, and may result in less accurate detection of some signs than the other. I decided to proceed with the dataset as such, and comeback to modify if I am not able to achieve the required accuracy.
 
-![image][https://github.com/saras152/Traffic-Sign-Classifier/blob/master/new-images/barchart.png]
+![image](https://github.com/saras152/Traffic-Sign-Classifier/blob/master/new-images/barchart.png)
+
 
 ### Designing and Testing a Model Architecture
 
 1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
 
+The implemented architecture is a slightly modified version of LeNeT-5. This included an additional fully-connected layer compared to LeNeT-5 and also included dropouts. 
 
+The network has the following architecture:
+
+* Layer 1: Convolution Layer to accept 32X32X1 images to convert them to 28X28X10 through a 5X5 filter and a stride of 1
+* ReLu Activation
+* MaxPool with a stride of 2 and 2X2 as window size
+* Layer 2: Convolution Layer to accept 14X14X10 and to output 10X10X20 
+* ReLu Activation
+* Maxpool with a stride of 2 and 2X2 as window size
+* Flatten the layer to result in 500 outputs
+* Layer 3: Fully connected layer with 500 inputs, 700 outputs
+* ReLu Activation
+* Layer 4: Fully connected layer with 700 inputs and 200 outputs
+* ReLu Activation
+* Dropout with 0.65 keep fraction
+* Layer 5: Fully connected layer with 200 inputs and 80 outputs
+* ReLu activation
+* Dropout with 0.65 keep fraction
+* Layer 6: fully connected layer with 80 inputs and 43 outputs
+
+With 40 epochs and a batch size of 100 images of grayscaled and normalized images, I was able to achieve an accuracy of 96.1% on the validation set and 93.8% on the test set. 
+
+
+
+
+#### What didn't work for me ####
+
+I attempted with the LeNeT-5 architecture for 3 channel images initially without pre-processing the images, at all. This resulted in an accuracy of about 70% on validation set. 
+
+Then I went on to normalize the image with (pixelvalue-128)/128. This improved by accuracy to about 80%.
+
+I further went ahead and normalized the accuracy of each color channel and reduced the standard deviation to 1 by subtracting the mean and dividing by the standard deviations calculated from numpy ( calculated as np.mean(), and np.std() ). This did not improve my validation accuracy, and it still settled at about 80%.
+
+Then I thought that may be a fixed learning rate could be causing the problem for 
+
+Then I went on to convert the images to gray scale and then apply the normalization ( subtract by the mean and divide by the standard deviation). This gave me an validation accuracy of close to 90%. 
+
+Then I reduced the 
 
 Here is an example of a traffic sign image before and after grayscaling.
 

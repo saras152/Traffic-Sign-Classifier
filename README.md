@@ -1,6 +1,6 @@
 # **Traffic Sign Recognition** 
 
-This project is created to recognize traffic signs through machine learning principles, with focus on deep learning and Convolutional neural networks. I used the database provided from [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset) for training, validating and testing the model. 
+This project is created to recognize traffic signs through machine learning principles, with focus on deep learning and Convolutional neural networks. I used the pickled database derived from [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset) for training, validating and testing the model. I have used few images downloaded from internet to test the model for accuracy.
 
 ---
 
@@ -17,25 +17,25 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./new-images/11 right of way.png  "Sign1"
-[image2]: ./new-images/12 priority road.png  "Sign2"
-[image3]: ./new-images/13 yield.png  "Sign3"
-[image4]: ./new-images/17 no entry.png  "Sign4"
-[image5]: ./new-images/26 signal lights.png  "Sign5"
-[image6]: ./new-images/36 straight or right.png  "Sign6"
-[image7]: ./new-images/38 keep right.png  "Sign7"
+[image1]: ./new-images/11-right-of-way.png  "Sign1"
+[image2]: ./new-images/12-priority-road.png  "Sign2"
+[image3]: ./new-images/13-yield.png  "Sign3"
+[image4]: ./new-images/17-no-entry.png  "Sign4"
+[image5]: ./new-images/26-signal-lights.png  "Sign5"
+[image6]: ./new-images/36-straight-or-right.png  "Sign6"
+[image7]: ./new-images/38-keep-right.png  "Sign7"
 
 ## Rubric Points
-Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
+In the test below, I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
 
 ---
-###Writeup / README
+### Writeup / README
 
-####1. Provide a Writeup / README that includes all the rubric points and how you addressed each one. You can submit your writeup as markdown or pdf. You can use this template as a guide for writing the report. The submission includes the project code.
+1. Provide a Writeup / README that includes all the rubric points and how you addressed each one. You can submit your writeup as markdown or pdf. You can use this template as a guide for writing the report. The submission includes the project code.
 
-You're reading it! and here is a link to my [project code](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
+This is the README file. My [project code](https://github.com/saras152/Traffic-Sign-Classifier/blob/master/Traffic_Sign_Classifier.ipynb) is in the repo, along with a html file generated from the jupyter notebook.
 
-###Data Set Summary & Exploration
+### Data Set Summary & Exploration
 
 ####1. Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
 

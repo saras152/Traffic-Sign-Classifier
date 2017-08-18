@@ -146,7 +146,7 @@ Here are the results of the prediction:
 | Straight of right     | Straight of right                             |
 | Keep right            | Keep right                                    |
 
-The model was able to correctly guess 6 of the 7 traffic signs, which gives an accuracy of 85.7%. This is less than the accuracy on the test set of 93%. This reduction may be partly because of imprefections included in the new images. 
+The model was able to correctly guess 6 of the 7 traffic signs, which gives an accuracy of 85.7%. This is less than the accuracy on the test set of 93%. The accuracy of new image classification changes drastically even with one prediction going wrong. That being said, the wrong classification of the new images may be partly because of imprefections included in the new images. 
 
 The image below shows the color image considered, and the grayscale version of the image followed by the top three predictions.
 

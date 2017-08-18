@@ -56,7 +56,7 @@ The implemented architecture is a slightly modified version of LeNeT-5. This inc
 
 #### pre-processing ####
 
-I converted the imges to grayscale so that the memory required to process the network is smaller. Additionally, to make the average value of the pizel values zero, subtracted mean of each image pizel value (np.mean()) from the image, and then to reduce the scale of the values, divided the pizel value with standard deviation (np.std()). This resulted in most of the values for the pixels represented in a narrow band(less than 1), and they are all centered about 0.
+I converted the images to grayscale so that the memory required to process the network is smaller. Additionally, to make the average value of the pixel values zero, subtracted mean of each image pizel value (np.mean()) from the image, and then to reduce the scale of the values, divided the pixel value with standard deviation (np.std()). This resulted in most of the values for the pixels represented in a narrow band(less than 1), and they are all centered about 0.
 
 
 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
@@ -74,17 +74,19 @@ My final model consisted of the following layers:
 * ReLu Activation
 * Fully connected layer with 700 inputs and 200 outputs
 * ReLu Activation
-* Dropout with 0.65 keep fraction
+* Dropout with 0.85 keep fraction
 * Fully connected layer with 200 inputs and 80 outputs
 * ReLu activation
-* Dropout with 0.65 keep fraction
+* Dropout with 0.85 keep fraction
 * Fully connected layer with 80 inputs and 43 outputs
+
+I used a learning rate of 0.001, and an epoch count of 40 and a batch size of 400.
 
 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
 To train the model, I used Adam Optimizer. This choice is partly because of my lack of awareness about intricate usage details of these optimizers. I went ahead with the suggested optimizer from the class tutorials as mentioned in LeNet lab. 
 
-I had initially tried to use a low batch size and low epoch count for tuning the model. However, this resulted in the low validation accuracies. Then I increased the peochs to over 30 and also incresed the batch size. Although this increases the system memory requirements, I was optimistic about better fitting model.
+I had initially tried to use a low batch size and low epoch count for tuning the model. However, this resulted in the low validation accuracies. Then I increased the epochs to over 30 and also incresed the batch size. Although this increases the system memory requirements, I was optimistic about better fitting model.
 
 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
@@ -163,6 +165,10 @@ For the image with traffic signs, the model predicted it to be caution. But the 
 | 0.581185758   | Caution                   |
 | 0.999098659           | Straight or right                             |
 | 0.985288680           | Keep right                                    |
+
+
+## EDIT ##
+I attempted a RBG image input based model instead of grayscale images as inputs to the network with the hopes that the traffic signs image will be corectly classified, but it was not. May be there is something else that needs to be done to correctly classify that image.
 
 ## What else can be done ##
 

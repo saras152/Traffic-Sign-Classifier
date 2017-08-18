@@ -54,8 +54,6 @@ When the histogram of number of occurrances of each label is plotted, it may be 
 
 The implemented architecture is a slightly modified version of LeNeT-5. This included an additional fully-connected layer compared to LeNeT-5 and also included dropouts. 
 
-With 40 epochs and a batch size of 400 images of grayscaled and normalized images, I was able to achieve an accuracy of 96.1% on the validation set and 93.8% on the test set. 
-
 #### pre-processing ####
 
 I converted the imges to grayscale so that the memory required to process the network is smaller. Additionally, to make the average value of the pizel values zero, subtracted mean of each image pizel value (np.mean()) from the image, and then to reduce the scale of the values, divided the pizel value with standard deviation (np.std()). This resulted in most of the values for the pixels represented in a narrow band(less than 1), and they are all centered about 0.

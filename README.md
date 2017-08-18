@@ -166,3 +166,16 @@ For the image with traffic signs, the model predicted it to be caution. But the 
 | 0.999098659           | Straight or right                             |
 | 0.985288680           | Keep right                                    |
 
+## What else can be done ##
+
+The following things may be tried to improve the accuracy
+
+* Color images of three channels may be used as they are for providing the inputs to the network.
+    * This improves the classification accuracy by looking for colors too.
+* Both the grayscale and color images may be provided to the network with a layer combining these two inputs
+    * this provides an opportunity to the network to look at several possiblt characteristics
+* The labels may need to be multi-dimentions. i.e. we may include their type - warning signs, hazard signs, information signs, etc. This improves the network's ability for predictions when it encounters any signs that were not in the training set. 
+* The network needs to be trained to assess the sub-classification
+    * it should be able to identify 'speed limit of 30 ends' from its previous observations on 'speed limit is 30' and 'speed limit of 80 ends here'. My present model is not capable of such improvements. 
+* A global optimization scheme has to be incorporated which will also consider changes to learning rate, epochs, batchsize and any such hyperparameters that would result in automated tuning of the model.
+    * the optimization scheme should have control on the parameters' range and their step size to shit our situational requirements. 
